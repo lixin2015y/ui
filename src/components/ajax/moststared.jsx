@@ -18,7 +18,9 @@ export default class MostStared extends Component {
         //             respName: response.data.items[0].name,
         //             respUrl: response.data.items[0].html_url
         //         })
-        //     })
+        //     }).catch((error) => {
+        //     console.log(error.message)
+        // })
 
         // 使用fetch
         fetch('https://api.github.com/search/repositories?q=react&sort=stars')
