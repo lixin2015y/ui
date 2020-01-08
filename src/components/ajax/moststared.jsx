@@ -11,13 +11,26 @@ export default class MostStared extends Component {
     }
 
     componentDidMount() {
-        axios.get('https://api.github.com/search/repositories?q=react&sort=stars')
+        // 使用axios
+        // axios.get('https://api.github.com/search/repositories?q=react&sort=stars')
+        //     .then(response => {
+        //         this.setState({
+        //             respName: response.data.items[0].name,
+        //             respUrl: response.data.items[0].html_url
+        //         })
+        //     })
+
+        // 使用fetch
+        fetch('https://api.github.com/search/repositories?q=react&sort=stars')
             .then(response => {
-                this.setState({
-                    respName: response.data.items[0].name,
-                    respUrl: response.data.items[0].html_url
-                })
+                return response.json()
+            }).then(data => {
+            const {html_url, name} = data.items[0]
+            this.setState({
+                respName: name,
+                respUrl: html_url
             })
+        })
     }
 
     render() {
