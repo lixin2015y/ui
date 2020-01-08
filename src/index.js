@@ -1,4 +1,6 @@
 import React from "react";
 import ReactDOM from 'react-dom'
-import App from "../src/components/app/App";
-ReactDOM.render(<App/>, document.getElementById("root"))
+import MostStared from "./components/ajax/moststared";
+// ReactDOM.render(<App/>, document.getElementById("root"))
+
+ReactDOM.render(<MostStared/>, document.getElementById("root"))
