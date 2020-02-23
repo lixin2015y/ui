@@ -1,6 +1,17 @@
 import React from "react";
-import ReactDOM from 'react-dom'
-import MostStared from "./components/ajax/moststared";
-// ReactDOM.render(<App/>, document.getElementById("root"))
+import { render } from 'react-dom'
 
-ReactDOM.render(<MostStared/>, document.getElementById("root"))
+import { BrowserRouter } from "react-router-dom"
+
+// import MostStared from "./components/ajax/moststared";
+// ReactDOM.render(<App/>, document.getElementById("root"))
+import App from "./components/router/components/app"
+
+render(
+    (
+        <BrowserRouter>
+            <App/>
+        </BrowserRouter>
+    ),
+     document.getElementById("root")
+)
